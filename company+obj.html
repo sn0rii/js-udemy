@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            background-color: rgb(8, 8, 8);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        
+
+        let company = {
+            name: "Example Ltd.",
+            city: "Wawa",
+            employees: [],
+            addEmployee: function (name, surname) {
+                const employee = {
+                    name: name,
+                    surname: surname,
+                    email: `${name}.${surname}@example.com`
+                };
+
+                let index = this.employees.length;
+                this.employees[index] = employee;
+            },
+            showEmployees: function () {
+                console.log("Employees from " + this.name);
+                for (let i = 0; i < this.employees.length; i++) {
+                    const employee = this.employees[i];
+                    console.log(employee.name, employee.surname);
+                }
+            }
+        };
+
+        company.city = "Gdańsk";
+        company.name = "Extra Ltd."
+        company["name"] = "Special Ltd.";
+
+        company.addEmployee("Ania", "Kowalska");
+        company.addEmployee("Daniel", "Dytko");
+
+        company.showEmployees();
+
+
+
+
+
+
+ 
+
+    </script>
+</body>
+</html>
